@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0F1729;  /* Dark navy blue */
+  --secondary: #1B2437;   /* Slightly lighter navy for cards */
+  --text: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --accent: #2563EB;
+  
+  /* Status colors */
+  --status-stable: #22C55E;
+  --status-warning: #F59E0B;
+  --status-error: #EF4444;
+}
+
+/* Ensure html and body take full height */
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Make sure the root div also takes full height */
+#__next,
+main {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.card {
+  background-color: var(--secondary);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Add these utility classes if needed */
+.bg-primary {
+  background-color: var(--background);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+/* Custom component styles */
+.card {
+  @apply bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg p-6 bg-[var(--secondary)];
+}
+
+.nav-link {
+  @apply px-4 py-2 rounded-md transition-colors duration-200 hover:bg-[var(--accent)] text-[var(--text-secondary)] hover:text-[var(--text-primary)];
+}
+
+.nav-link.active {
+  @apply bg-[var(--accent)] text-[var(--text-primary)];
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md transition-colors duration-200 font-medium;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] hover:bg-opacity-80 text-[var(--text-primary)];
+}
+
+.select-input {
+  @apply w-full p-2 rounded-lg bg-[var(--secondary)] text-[var(--text-primary)] border border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)];
+}
